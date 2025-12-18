@@ -1,0 +1,99 @@
+/*
+AddExpense
+*/
+/* Color Palette:
+   --primary-blue: #3267E5;
+   --light-pink: #ffe0e6;
+   --error-red: #e74c3c;
+   --dark-text: #2c3e50;
+   --light-gray-bg: #f5f7fa;
+   --border-gray: #bdc3c7;
+*/
+
+.dialog-root {
+    /* Main container styling, matching the blurred background look */
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-color: #f8c0cc; /* Light Red/Pink border */
+    -fx-border-width: 3px;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 0);
+}
+
+.dialog-container {
+    -fx-padding: 30px;
+}
+
+/* Header Styling */
+
+.dialog-header {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.dialog-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e74c3c; /* Red text for Expense */
+}
+
+.close-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #bdc3c7; /* Light gray X */
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-padding: 5px;
+}
+
+.close-button:hover {
+    -fx-text-fill: #e74c3c;
+}
+
+/* Input Fields Styling */
+
+.text-input, .combo-input {
+    -fx-background-color: #f5f7fa; /* Light Gray background for input */
+    -fx-background-radius: 8px;
+    -fx-border-color: transparent;
+    -fx-font-size: 16px;
+    -fx-padding: 12px 15px;
+    -fx-prompt-text-fill: #999999;
+}
+
+/* ComboBox specific styling */
+.combo-input .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* Footer and Buttons */
+
+.dialog-footer {
+    -fx-padding: 10px 0 0 0;
+}
+
+.add-button {
+    -fx-background-color: #3267E5; /* Primary Blue */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 30px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.add-button:hover {
+    -fx-background-color: #2a5dd1;
+}
+
+.cancel-button {
+    -fx-background-color: #bdc3c7; /* Light Gray for Cancel */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 30px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #a0a6aa;
+}
