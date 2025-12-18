@@ -1,0 +1,42 @@
+package com.expensetracker.controller;
+
+import javafx.fxml.FXML;
+import com.expensetracker.MainApp;
+import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
+import java.io.IOException;
+import com.expensetracker.util.SceneManager;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
+
+
+public class LandingController implements Initializable {
+
+    @FXML
+    private Button loginButton;
+
+    @FXML
+    private Button getStartedButton;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // Initialization code here, e.g., setting initial state
+    }
+
+    @FXML
+    private void handleLogin(ActionEvent event) {
+        System.out.println(" button clicked! Implement registration/main app entry.");
+    }
+
+    @FXML
+    private void handleGetStarted(ActionEvent event) {
+        System.out.println("Get Started button clicked! Implement registration/main app entry.");
+        // Example: load the main expense tracking scene
+    }
+}
