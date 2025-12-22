@@ -97,3 +97,108 @@ AddExpense
 .cancel-button:hover {
     -fx-background-color: #a0a6aa;
 }
+/*
+===============
+Expense History
+===============
+*/
+/* Note: This CSS assumes the use of styles from dashboard-styles.css
+   (e.g., .sidebar, .nav-button, .logo-text, .profile-circle, .dashboard-header)
+   and only defines new or overriding styles. */
+
+/* --- Layout Overrides --- */
+.history-content-container {
+    -fx-padding: 30px 50px;
+    -fx-background-color: #f5f7fa; /* Light Gray Background */
+}
+
+.nav-button-active {
+    /* Override for History button active state */
+    -fx-background-color: white;
+    -fx-text-fill: #3267E5;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+}
+
+/* --- Page Title --- */
+.page-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding-bottom: 10px;
+}
+
+/* --- TableView Styling --- */
+.history-table {
+    -fx-background-color: transparent;
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+
+/* Header/Column Styling */
+.history-table .column-header-background {
+    -fx-background-color: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #ecf0f1;
+}
+
+.history-table .column-header {
+    -fx-size: 40px;
+}
+
+.history-table .column-header .label {
+    -fx-text-fill: #34495e;
+}
+
+/* Row Styling */
+.history-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-width: 0 0 1px 0;
+    -fx-cell-size: 80px; /* Increased row height to accommodate two lines of text */
+}
+
+.history-table .table-row-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+/* Cell Styling */
+.history-table .table-cell {
+    -fx-padding: 10 10 10 10;
+    -fx-alignment: TOP_LEFT;
+}
+
+/* Custom Category Column Cell Styling (to handle multi-line text) */
+.history-table .table-cell:nth-child(2) { /* Category column */
+    -fx-wrap-text: true;
+    -fx-text-alignment: left;
+}
+
+/* Custom styling for the Amount column based on value */
+.history-table .amount-column .label {
+    -fx-font-weight: bold;
+}
+
+/* Use Cell Value Factory in Java to apply specific color based on sign,
+   but for general styling: */
+.history-table .table-row-cell .amount-column {
+    -fx-alignment: TOP_RIGHT;
+}
+
+/* To style income (+value) and expense (-value) specifically in a TableView
+   cell using CSS, you need a custom CellFactory in the Java controller
+   to apply specific CSS classes to the cell/label itself. */
+
+/* Example: If you apply a class "expense-amount" to the cell content: */
+.history-table .table-cell.expense-amount .label {
+    -fx-text-fill: #e74c3c; /* Red */
+}
+
+/* Example: If you apply a class "income-amount" to the cell content: */
+.history-table .table-cell.income-amount .label {
+    -fx-text-fill: #2ecc71; /* Green */
+}
