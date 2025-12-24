@@ -40,3 +40,4 @@ public class LandingController implements Initializable {
         // Example: load the main expense tracking scene
     }
 }
+
