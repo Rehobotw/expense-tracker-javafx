@@ -1,5 +1,112 @@
 /*
+============
+Landing-Page
+===========
+*/
+/* Color Palette:
+   --primary-blue: #3267E5; (Main Button/Active Color)
+   --dark-blue: #001f3f; (Logo/Text Color)
+   --light-gray: #f5f7fa; (Background)
+   --text-dark: #333333;
+*/
+
+.root-pane {
+    -fx-background-color: #f5f7fa; /* Light Gray Background */
+}
+
+/* --- Header Bar Styling --- */
+.header-bar {
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 100px;
+    -fx-spacing: 40px;
+}
+
+.logo-text {
+    -fx-font-family: "Arial Black", sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #001f3f; /* Dark Blue */
+}
+
+.nav-link {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 10px;
+}
+
+.login-button {
+    -fx-background-color: #3267E5; /* Primary Blue */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 8px 20px;
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.login-button:hover {
+    -fx-background-color: #2a5dd1; /* Slightly darker hover */
+}
+
+/* --- Hero Section Styling --- */
+
+.hero-title {
+    -fx-font-family: "Arial Black", sans-serif;
+    -fx-font-size: 72px; /* Large, bold text */
+    -fx-font-weight: bold;
+    -fx-text-fill: #001f3f;
+    -fx-line-spacing: 0.8; /* Tighter line height for the multi-line title */
+}
+
+.hero-subtitle {
+    -fx-font-size: 20px;
+    -fx-text-fill: #555555;
+    -fx-max-width: 500px;
+}
+
+.get-started-button {
+    -fx-background-color: #3267E5; /* Primary Blue */
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-padding: 15px 40px;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 4);
+}
+
+.get-started-button:hover {
+    -fx-background-color: #2a5dd1;
+}
+
+.illustration-placeholder {
+    -fx-text-fill: #999999;
+    -fx-font-size: 16px;
+    -fx-padding: 100px;
+    -fx-border-color: #ccc;
+    -fx-border-style: dashed;
+    -fx-border-width: 2px;
+
+}
+
+/* --- Footer/Feature Highlights Styling --- */
+.footer-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 20px 0;
+}
+
+.feature-highlight {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #777777;
+}
+/*
+===========
 AddExpense
+===========
 */
 /* Color Palette:
    --primary-blue: #3267E5;
@@ -202,3 +309,4 @@ Expense History
 .history-table .table-cell.income-amount .label {
     -fx-text-fill: #2ecc71; /* Green */
 }
+
