@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane fx:id="rootPane" prefHeight="800.0" stylesheets="@../css/styles.css" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expensetracker.controller.DashboardController">
+
+    <left>
+        <VBox prefWidth="250.0" styleClass="sidebar">
+            <VBox styleClass="sidebar-logo-container" alignment="TOP_CENTER" spacing="50.0" VBox.vgrow="ALWAYS">
+                <Label styleClass="logo-text" text="MyExpenses" />
+
+                <VBox spacing="10.0">
+                    <Button mnemonicParsing="false" styleClass="nav-button-active" text="Dashboard" />
+                    <Button mnemonicParsing="false" styleClass="nav-button" text="History" />
+                    <Button mnemonicParsing="false" styleClass="nav-button" text="Analytics" />
+                </VBox>
+
+                <VBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS" styleClass="logout-container">
+                    <Button mnemonicParsing="false" onAction="#handleLogout" styleClass="logout-button" text="Log out" />
+                </VBox>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="dashboard-scrollpane">
+            <VBox spacing="20.0" styleClass="dashboard-content">
+
+                <HBox alignment="CENTER_RIGHT" styleClass="dashboard-header">
+                    <VBox HBox.hgrow="ALWAYS">
+                        <Label fx:id="greetingDateLabel" text="Dec 11, 2025" styleClass="header-date" />
+                    </VBox>
+                    <Circle radius="18.0" styleClass="profile-circle" />
+                </HBox>
+
+                <VBox spacing="5.0" styleClass="greeting-section">
+                    <Label fx:id="userNameLabel" text="Hello Natnael" styleClass="greeting-title" />
+                    <Label text="Take a look at your expenses" styleClass="greeting-subtitle" />
+                </VBox>
+
+                <HBox spacing="20.0" alignment="CENTER_LEFT" styleClass="metrics-section">
+                    <VBox styleClass="metric-card-balance" alignment="CENTER_LEFT">
+                        <Label styleClass="metric-card-title" text="Total balance" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <Label styleClass="metric-card-value-icon" text="\\uf53a" /> <Label fx:id="totalBalanceValue" styleClass="metric-card-value" text="8500 ETB" />
+                        </HBox>
+                    </VBox>
+
+                    <VBox styleClass="metric-card-income" alignment="CENTER_LEFT">
+                        <Label styleClass="metric-card-title" text="Income" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <Label styleClass="metric-card-value-icon" text="\\uf817" /> <Label fx:id="incomeValue" styleClass="metric-card-value" text="13000 ETB" />
+                        </HBox>
+                    </VBox>
+
+                    <VBox styleClass="metric-card-expense" alignment="CENTER_LEFT">
+                        <Label styleClass="metric-card-title" text="Expense" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <Label styleClass="metric-card-value-icon" text="\\uf53c" /> <Label fx:id="expenseValue" styleClass="metric-card-value" text="4500 ETB" />
+                        </HBox>
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS" />
+
+                    <VBox spacing="10.0" alignment="CENTER_RIGHT">
+                        <Button mnemonicParsing="false" onAction="#handleAddExpense" styleClass="action-button-expense" text="+ Add Expense" />
+                        <Button mnemonicParsing="false" onAction="#handleAddIncome" styleClass="action-button-income" text="+ Add Income" />
+                    </VBox>
+                </HBox>
+
+                <GridPane hgap="20.0" vgap="20.0">
+                    <VBox styleClass="content-panel" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label styleClass="panel-title" text="Recent Transactions" />
+                        <VBox fx:id="recentTransactionsContainer" styleClass="transaction-list-container">
+                            <Label text="Category     Date          Amount" styleClass="transaction-header" />
+                            <VBox styleClass="transaction-item">
+                                <HBox alignment="CENTER_LEFT">
+                                    <Label text="Food" styleClass="transaction-category" prefWidth="100.0" />
+                                    <Label text="22/01/2025" prefWidth="120.0" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="-200 ETB" styleClass="transaction-amount-expense" />
+                                </HBox>
+                                <Label text="Description" styleClass="transaction-description" />
+                            </VBox>
+                            <VBox styleClass="transaction-item">
+                                <HBox alignment="CENTER_LEFT">
+                                    <Label text="other" styleClass="transaction-category" prefWidth="100.0" />
+                                    <Label text="22/01/2025" prefWidth="120.0" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="+400 ETB" styleClass="transaction-amount-income" />
+                                </HBox>
+                                <Label text="Description" styleClass="transaction-description" />
+                            </VBox>
+                            <VBox styleClass="transaction-item">
+                                <HBox alignment="CENTER_LEFT">
+                                    <Label text="Shopping" styleClass="transaction-category" prefWidth="100.0" />
+                                    <Label text="22/01/2025" prefWidth="120.0" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="+100 ETB" styleClass="transaction-amount-income" />
+                                </HBox>
+                                <Label text="Description" styleClass="transaction-description" />
+                            </VBox>
+                            <VBox styleClass="transaction-item">
+                                <HBox alignment="CENTER_LEFT">
+                                    <Label text="Food" styleClass="transaction-category" prefWidth="100.0" />
+                                    <Label text="22/01/2025" prefWidth="120.0" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label text="-200 ETB" styleClass="transaction-amount-expense" />
+                                </HBox>
+                                <Label text="Description" styleClass="transaction-description" />
+                            </VBox>
+                        </VBox>
+                    </VBox>
+
+                    <VBox styleClass="content-panel" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label styleClass="panel-title" text="Top Categories" />
+                        <HBox spacing="10.0" alignment="CENTER" VBox.vgrow="ALWAYS">
+                            <Pane prefHeight="250.0" prefWidth="250.0" styleClass="chart-placeholder" />
+
+                            <VBox spacing="8.0" styleClass="legend-container">
+                                <HBox spacing="10.0" alignment="CENTER_LEFT"><Circle radius="5" styleClass="legend-dot-food" /><Label text="Food" /></HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT"><Circle radius="5" styleClass="legend-dot-traveling" /><Label text="Traveling" /></HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT"><Circle radius="5" styleClass="legend-dot-subscription" /><Label text="Subscription" /></HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT"><Circle radius="5" styleClass="legend-dot-others" /><Label text="others" /></HBox>
+                                <HBox spacing="10.0" alignment="CENTER_LEFT"><Circle radius="5" styleClass="legend-dot-shopping" /><Label text="Shopping" /></HBox>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </GridPane>
+
+                <Region prefHeight="50.0" />
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

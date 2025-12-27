@@ -309,4 +309,224 @@ Expense History
 .history-table .table-cell.income-amount .label {
     -fx-text-fill: #2ecc71; /* Green */
 }
+/*
+=========
+Dashboard
+=========
+*/
+/* Color Palette:
+   --primary-blue: #3267E5; (Sidebar/Active Color)
+   --primary-light: #e6f0ff; (Sidebar Background)
+   --dark-text: #2c3e50;
+   --light-gray-bg: #f5f7fa; (Main Content Background)
+*/
+
+.root-pane {
+    -fx-background-color: white;
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    -fx-background-color: #e6f0ff; /* Light Blue/Lavender */
+    -fx-padding: 30px 20px;
+}
+
+.logo-text {
+    -fx-font-family: "Arial Black", sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3267E5; /* Primary Blue */
+    -fx-padding: 0 0 20px 0;
+}
+
+.nav-button, .nav-button-active {
+    -fx-pref-width: 210px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12px 20px;
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+    -fx-text-fill: #2c3e50;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    /* Add icon here: requires external FontAwesomeFX library for professional icons */
+    -fx-graphic-text-gap: 10;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.nav-button-active {
+    -fx-background-color: white; /* Active item background */
+    -fx-text-fill: #3267E5; /* Active item text color */
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+}
+
+.nav-button:hover:not(.nav-button-active) {
+    -fx-background-color: #d8e6fa;
+}
+
+.logout-container {
+    -fx-padding: 50px 0 0 0;
+}
+
+.logout-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-padding: 10px;
+}
+
+/* --- Main Content Styling --- */
+.dashboard-scrollpane {
+    -fx-background-color: #f5f7fa; /* Light Gray Background */
+}
+
+.dashboard-content {
+    -fx-padding: 30px 50px;
+}
+
+.dashboard-header {
+    -fx-padding: 0 0 10px 0;
+}
+
+.header-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.profile-circle {
+    -fx-fill: #3267E5; /* Placeholder for profile image */
+}
+
+.greeting-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.greeting-subtitle {
+    -fx-font-size: 18px;
+    -fx-text-fill: #7f8c8d;
+    -fx-padding-bottom: 20px;
+}
+
+/* --- Metric Cards Styling --- */
+
+.metric-card-balance, .metric-card-income, .metric-card-expense {
+    -fx-padding: 20px;
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 4);
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
+    -fx-spacing: 5px;
+}
+
+.metric-card-balance { -fx-border-color: #a0d8ff; } /* Light Blue Border */
+.metric-card-income { -fx-border-color: #90ee90; } /* Light Green Border */
+.metric-card-expense { -fx-border-color: #ffb6c1; } /* Light Red Border */
+
+.metric-card-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.metric-card-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.metric-card-value-icon {
+    -fx-font-size: 20px;
+    -fx-font-family: "Font Awesome 5 Free", "Material Design Icons"; /* Requires icon font */
+    -fx-text-fill: #3267E5;
+}
+
+/* --- Action Buttons --- */
+.action-button-expense, .action-button-income {
+    -fx-background-radius: 8px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-min-width: 150px;
+}
+
+.action-button-expense {
+    -fx-background-color: #ff6347; /* Tomato Red */
+}
+
+.action-button-income {
+    -fx-background-color: #3cb371; /* Medium Sea Green */
+}
+
+/* --- Content Panels (Recent Transactions & Chart) --- */
+.content-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);
+    -fx-min-height: 400px;
+}
+
+.panel-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding-bottom: 15px;
+}
+
+/* Transaction List */
+.transaction-header {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5px 0;
+}
+
+.transaction-item {
+    -fx-padding: 10px 0;
+    -fx-border-color: #ecf0f1;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.transaction-item:last-child {
+    -fx-border-width: 0; /* Remove border from last item */
+}
+
+.transaction-category {
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+.transaction-description {
+    -fx-font-size: 12px;
+    -fx-text-fill: #bdc3c7;
+}
+
+.transaction-amount-expense {
+    -fx-font-weight: bold;
+    -fx-text-fill: #e74c3c; /* Red */
+}
+
+.transaction-amount-income {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2ecc71; /* Green */
+}
+
+/* Chart and Legend */
+.chart-placeholder {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 50%;
+    -fx-max-width: 250px;
+    -fx-max-height: 250px;
+}
+
+.legend-dot-food     { -fx-fill: #3498db; }
+.legend-dot-traveling  { -fx-fill: #f39c12; }
+.legend-dot-subscription { -fx-fill: #2ecc71; }
+.legend-dot-others { -fx-fill: #95a5a6; }
+.legend-dot-shopping { -fx-fill: #e74c3c; }
+
 
