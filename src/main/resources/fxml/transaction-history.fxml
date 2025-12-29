@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<BorderPane fx:id="rootPane" stylesheets="@../css/styles.css" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.expensetracker.controller.TransactionHistoryController">
+
+    <left>
+        <VBox prefWidth="230.0" styleClass="sidebar">
+            <Label styleClass="logo-text" text="MyExpenses" />
+            <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+                <Button mnemonicParsing="false" onAction="#handleDashboard" styleClass="nav-button" text="Dashboard">
+                    <graphic><Label styleClass="icon-label" text="🏠"/></graphic>
+                </Button>
+                <Button mnemonicParsing="false" styleClass="nav-button-active" text="History">
+                    <graphic><Label styleClass="icon-label" text="🕒"/></graphic>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#handleAnalytics" styleClass="nav-button" text="Analytics">
+                    <graphic><Label styleClass="icon-label" text="📊"/></graphic>
+                </Button>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#handleLogout" styleClass="logout-button" text="Log out" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="dashboard-content" spacing="25.0">
+
+            <HBox alignment="CENTER_RIGHT">
+                <Region HBox.hgrow="ALWAYS" />
+                <HBox alignment="CENTER" spacing="15.0">
+                    <Label fx:id="currentDateLabel" styleClass="header-date" text="Dec 11, 2025" />
+                </HBox>
+            </HBox>
+
+            <Label styleClass="greeting-title" text="Expense History" />
+
+            <VBox styleClass="content-panel"  VBox.vgrow="ALWAYS">
+                <TableView fx:id="historyTable" styleClass="history-table">
+                    <columns>
+                        <TableColumn fx:id="typeColumn" text="Type" prefWidth="80"/>
+                        <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+                        <TableColumn fx:id="categoryColumn" text="Category" prefWidth="120"/>
+                        <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200"/>
+                        <TableColumn fx:id="amountColumn" text="Amount" prefWidth="120"/>
+                        <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="150"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane fx:id="rootPane" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.expensetracker.controller.AnalyticsController">
+    <left>
+        <VBox prefWidth="230.0" styleClass="sidebar"  spacing="50.0">
+            <Label styleClass="logo-text" text="MyExpenses"><padding><Insets left="15" bottom="40"/></padding></Label>
+            <VBox spacing="15.0">
+                <Button mnemonicParsing="false" onAction="#handleDashboard" styleClass="nav-button" text="Dashboard">
+                    <graphic><Label styleClass="icon-label" text="🏠"/></graphic>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#handleHistory" styleClass="nav-button" text="History">
+                    <graphic><Label styleClass="icon-label" text="🕒"/></graphic>
+                </Button>
+                <Button mnemonicParsing="false" styleClass="nav-button-active" text="Analytics">
+                    <graphic><Label styleClass="icon-label" text="📊"/></graphic>
+                </Button>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#handleLogout" styleClass="logout-button" text="Log out" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="25.0" styleClass="main-content">
+            <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+                <Label styleClass="page-title" text="Analytics" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="currentDateLabel" styleClass="header-date" text="Dec 11, 2025" />
+            </HBox>
+
+            <VBox styleClass="card" VBox.vgrow="ALWAYS">
+                <BarChart fx:id="monthlyBarChart" legendVisible="false" animated="false">
+                    <xAxis><CategoryAxis fx:id="xAxis" /></xAxis>
+                    <yAxis><NumberAxis fx:id="yAxis" /></yAxis>
+                </BarChart>
+            </VBox>
+
+            <GridPane hgap="25.0" vgap="25.0">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="40.0" />
+                    <ColumnConstraints percentWidth="60.0" />
+                </columnConstraints>
+
+                <VBox spacing="25.0" GridPane.columnIndex="0">
+                    <VBox alignment="CENTER" styleClass="card">
+                        <Label styleClass="info-card-title" text="Biggest Expense" />
+                        <Label fx:id="biggestExpenseValue" styleClass="info-card-value-expense" />
+                        <Label fx:id="biggestExpenseDetails" styleClass="info-card-details" />
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="card">
+                        <Label styleClass="info-card-title" text="Average Daily Spending" />
+                        <Label fx:id="averageSpendingValue" styleClass="info-card-value-average" />
+                    </VBox>
+                </VBox>
+
+                <VBox styleClass="card" GridPane.columnIndex="1">
+                    <Label styleClass="panel-title" text="Top Categories" alignment="CENTER" maxWidth="Infinity"/>
+                    <HBox alignment="CENTER" spacing="20.0">
+                        <PieChart fx:id="categoryPieChart" labelsVisible="false" legendVisible="false" prefHeight="200" prefWidth="200" />
+                        <VBox spacing="12.0" alignment="CENTER_LEFT">
+                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#0052cc"/><Label text="Food" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#ff9900"/><Label text="Transport" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#2ecc71"/><Label text="Shopping" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#9b59b6"/><Label text="Entertainment" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#e74c3c"/><Label text="Bills" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#1abc9c"/><Label text="Health" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#95a5a6"/><Label text="Others" styleClass="legend-text"/></HBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </GridPane>
+        </VBox>
+    </center>
+</BorderPane>

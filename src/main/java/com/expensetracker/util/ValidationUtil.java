@@ -1,4 +1,4 @@
-package util;
+package com.expensetracker.util;
 
 public class ValidationUtil {
 }

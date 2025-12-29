@@ -1,20 +1,33 @@
 package com.expensetracker;
 
+import com.expensetracker.util.SceneManager;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import com.expensetracker.dao.Database;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class MainApp extends Application {
+
+    public static final String landingPage = "/fxml/landing.fxml";
+    public static final String loginPage = "/fxml/login.fxml";
+    public static final String addExpensePage = "/fxml/add-expense.fxml";
+    public static final String addIncomePage= "/fxml/add-income.fxml";
+    public static final String dashboardPage = "/fxml/dashboard.fxml";
+    public static final String expenseHistoryPage  = "/fxml/transaction-history.fxml";
+    public static final String analyticsPage = "/fxml/analytics.fxml";
+    public static final String registrationPage= "/fxml/register.fxml";
+    public static final String featuresPage="/fxml/features.fxml";
+    // Dialogs are loaded separately using new Stages
+
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage primaryStage) {
+        Database.initialize();
+        // Initialize the SceneManager with the primary window stage
+        SceneManager.setPrimaryStage(primaryStage);
+
+        // Load the initial scene (Landing Page)
+        SceneManager.loadScene(landingPage, "MyExpenses - Track Your Finances", 1200, 700);
+
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
