@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="expense_tracker.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1287"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="0"/><expanded_item id="3" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="expenses" custom_title="0" dock_id="1" table="4,8:mainexpenses"/><dock_state state="000000ff00000000fd00000001000000020000043c000002b6fc0100000001fb000000160064006f0063006b00420072006f007700730065003101000000000000043c000001aa00ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="expenses" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="29"/><column index="2" value="54"/><column index="3" value="101"/><column index="4" value="300"/><column index="5" value="85"/><column index="6" value="52"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">-- January 2024 Expenses for User ID 1
+INSERT INTO expenses (amount, category, description, date, user_id) VALUES 
+-- Food &amp; Dining
+(45.50, 'Food', 'Groceries at Walmart', '2024-01-05', 1),
+(25.99, 'Food', 'Lunch at Italian restaurant', '2024-01-08', 1),
+(12.75, 'Food', 'Coffee and snacks', '2024-01-12', 1),
+(68.30, 'Food', 'Weekly grocery shopping', '2024-01-15', 1),
+(18.50, 'Food', 'Takeout dinner', '2024-01-19', 1),
+(35.20, 'Food', 'Restaurant with friends', '2024-01-22', 1),
+(7.99, 'Food', 'Breakfast sandwich', '2024-01-25', 1),
+(92.45, 'Food', 'Monthly bulk groceries', '2024-01-28', 1),
+
+-- Transportation
+(120.00, 'Transportation', 'Monthly bus pass', '2024-01-03', 1),
+(45.50, 'Transportation', 'Gas refill', '2024-01-10', 1),
+(15.00, 'Transportation', 'Taxi ride', '2024-01-14', 1),
+(60.00, 'Transportation', 'Car maintenance', '2024-01-20', 1),
+(28.75, 'Transportation', 'Parking fees', '2024-01-27', 1),
+
+-- Utilities
+(85.00, 'Utilities', 'Electricity bill', '2024-01-07', 1),
+(45.30, 'Utilities', 'Water bill', '2024-01-07', 1),
+(65.00, 'Utilities', 'Internet bill', '2024-01-10', 1),
+(120.50, 'Utilities', 'Gas bill', '2024-01-15', 1),
+(35.99, 'Utilities', 'Mobile phone bill', '2024-01-20', 1),
+
+-- Entertainment
+(45.00, 'Entertainment', 'Movie tickets', '2024-01-06', 1),
+(75.50, 'Entertainment', 'Concert tickets', '2024-01-11', 1),
+(12.99, 'Entertainment', 'Netflix subscription', '2024-01-15', 1),
+(60.00, 'Entertainment', 'Museum visit', '2024-01-18', 1),
+(32.50, 'Entertainment', 'Bowling with friends', '2024-01-24', 1),
+
+-- Shopping
+(89.99, 'Shopping', 'New shoes', '2024-01-04', 1),
+(45.75, 'Shopping', 'Office supplies', '2024-01-09', 1),
+(150.00, 'Shopping', 'Winter jacket', '2024-01-13', 1),
+(28.30, 'Shopping', 'Books', '2024-01-17', 1),
+(65.50, 'Shopping', 'Kitchen appliances', '2024-01-23', 1),
+
+-- Healthcare
+(25.00, 'Healthcare', 'Prescription medication', '2024-01-02', 1),
+(50.00, 'Healthcare', 'Doctor visit copay', '2024-01-16', 1),
+(15.99, 'Healthcare', 'Vitamins and supplements', '2024-01-26', 1),
+
+-- Housing
+(950.00, 'Housing', 'Monthly rent', '2024-01-01', 1),
+(45.00, 'Housing', 'Home cleaning supplies', '2024-01-08', 1),
+(120.00, 'Housing', 'Furniture repair', '2024-01-21', 1),
+
+-- Personal Care
+(25.50, 'Personal Care', 'Haircut', '2024-01-05', 1),
+(40.00, 'Personal Care', 'Gym membership', '2024-01-15', 1),
+(18.75, 'Personal Care', 'Skincare products', '2024-01-29', 1),
+
+-- Education
+(75.00, 'Education', 'Online course', '2024-01-10', 1),
+(29.99, 'Education', 'Textbook purchase', '2024-01-19', 1),
+
+-- Gifts &amp; Donations
+(50.00, 'Gifts', 'Birthday gift for friend', '2024-01-14', 1),
+(25.00, 'Donations', 'Charity donation', '2024-01-25', 1),
+
+-- Travel
+(350.00, 'Travel', 'Weekend trip hotel', '2024-01-20', 1),
+(120.50, 'Travel', 'Flight ticket', '2024-01-21', 1),
+(85.00, 'Travel', 'Travel insurance', '2024-01-22', 1),
+
+-- Miscellaneous
+(12.00, 'Miscellaneous', 'Bank fee', '2024-01-03', 1),
+(8.50, 'Miscellaneous', 'ATM withdrawal fee', '2024-01-11', 1),
+(19.99, 'Miscellaneous', 'App store purchase', '2024-01-30', 1);
+-- February 2024 Expenses for User ID 1
+INSERT INTO expenses (amount, category, description, date, user_id) VALUES 
+(52.30, 'Food', 'Groceries', '2024-02-02', 1),
+(950.00, 'Housing', 'Monthly rent', '2024-02-01', 1),
+(28.50, 'Transportation', 'Gas refill', '2024-02-05', 1),
+(120.00, 'Transportation', 'Monthly bus pass', '2024-02-03', 1),
+(19.99, 'Food', 'Restaurant lunch', '2024-02-08', 1),
+(89.00, 'Utilities', 'Electricity bill', '2024-02-07', 1),
+(40.00, 'Personal Care', 'Gym membership', '2024-02-15', 1),
+(65.75, 'Shopping', 'New clothes', '2024-02-10', 1),
+(35.00, 'Entertainment', 'Movie night', '2024-02-12', 1);
+-- Regular Income Streams (Jan-Dec 2024)
+INSERT INTO income (amount, category, description, date, user_id) VALUES 
+-- January 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-01-01', 1),
+(250.00, 'Freelance', 'Website design project - Client A', '2024-01-05', 1),
+(150.00, 'Consulting', 'IT consulting hours', '2024-01-10', 1),
+(500.00, 'Bonus', 'Quarterly performance bonus', '2024-01-15', 1),
+(75.00, 'Other', 'Cash gift from family', '2024-01-20', 1),
+(120.00, 'Freelance', 'Blog writing articles', '2024-01-25', 1),
+
+-- February 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-02-01', 1),
+(180.00, 'Freelance', 'Logo design work', '2024-02-07', 1),
+(300.00, 'Consulting', 'System setup consulting', '2024-02-14', 1),
+(200.00, 'Other', 'Sold old laptop', '2024-02-20', 1),
+(95.00, 'Freelance', 'Social media content', '2024-02-27', 1),
+
+-- March 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-03-01', 1),
+(420.00, 'Freelance', 'Mobile app design project', '2024-03-08', 1),
+(225.00, 'Consulting', 'Database optimization', '2024-03-15', 1),
+(150.00, 'Other', 'Tax refund', '2024-03-22', 1),
+(600.00, 'Bonus', 'Annual bonus', '2024-03-28', 1),
+
+-- April 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-04-01', 1),
+(350.00, 'Freelance', 'E-commerce website', '2024-04-05', 1),
+(175.00, 'Consulting', 'Security audit', '2024-04-12', 1),
+(100.00, 'Other', 'Dividend from investments', '2024-04-18', 1),
+
+-- May 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-05-01', 1),
+(280.00, 'Freelance', 'UI/UX design project', '2024-05-09', 1),
+(500.00, 'Bonus', 'Project completion bonus', '2024-05-15', 1),
+(125.00, 'Consulting', 'Training sessions', '2024-05-24', 1),
+
+-- June 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-06-01', 1),
+(600.00, 'Freelance', 'Full website redesign', '2024-06-07', 1),
+(200.00, 'Consulting', 'Monthly maintenance contract', '2024-06-15', 1),
+(150.00, 'Other', 'Online course sales', '2024-06-25', 1),
+
+-- July 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-07-01', 1),
+(320.00, 'Freelance', 'Brand identity package', '2024-07-08', 1),
+(180.00, 'Consulting', 'Technical documentation', '2024-07-16', 1),
+(400.00, 'Bonus', 'Half-year bonus', '2024-07-22', 1),
+
+-- August 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-08-01', 1),
+(450.00, 'Freelance', 'Web application development', '2024-08-06', 1),
+(220.00, 'Consulting', 'System migration support', '2024-08-17', 1),
+(80.00, 'Other', 'Referral bonus', '2024-08-29', 1),
+
+-- September 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-09-01', 1),
+(380.00, 'Freelance', 'Mobile app UI design', '2024-09-09', 1),
+(275.00, 'Consulting', 'Performance optimization', '2024-09-19', 1),
+(120.00, 'Other', 'Interest from savings', '2024-09-26', 1),
+
+-- October 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-10-01', 1),
+(520.00, 'Freelance', 'Corporate website update', '2024-10-07', 1),
+(195.00, 'Consulting', 'Code review services', '2024-10-14', 1),
+(300.00, 'Bonus', 'Client satisfaction bonus', '2024-10-21', 1),
+
+-- November 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-11-01', 1),
+(290.00, 'Freelance', 'Landing page design', '2024-11-05', 1),
+(210.00, 'Consulting', 'API integration help', '2024-11-18', 1),
+(100.00, 'Other', 'Book royalties', '2024-11-25', 1),
+
+-- December 2024
+(3000.00, 'Salary', 'Monthly salary - Acme Corp', '2024-12-01', 1),
+(750.00, 'Freelance', 'Year-end project rush', '2024-12-10', 1),
+(800.00, 'Bonus', 'Christmas bonus', '2024-12-15', 1),
+(250.00, 'Consulting', 'Emergency system fix', '2024-12-20', 1),
+(150.00, 'Other', 'Holiday gift money', '2024-12-24', 1);</sql><current_tab id="0"/></tab_sql></sqlb_project>
