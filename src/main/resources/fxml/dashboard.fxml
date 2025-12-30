@@ -72,7 +72,7 @@
 
                 <HBox spacing="25.0">
                     <VBox styleClass="content-panel" HBox.hgrow="ALWAYS" minWidth="450">
-                        <Label styleClass="panel-title-center" text="Recent Transactions" />
+                        <Label styleClass="panel-title-center" text="Recent Expenses" />
                         <HBox styleClass="transaction-header-row">
                             <Label text="Category" prefWidth="150" />
                             <Label text="Date" prefWidth="120" />
@@ -87,7 +87,7 @@
                         <HBox alignment="CENTER" spacing="30.0">
                             <PieChart fx:id="categoryPieChart" labelsVisible="true" legendVisible="false" prefHeight="250" prefWidth="250" />
 
-                            <VBox spacing="12.0" alignment="CENTER_LEFT">
+                            <VBox spacing="12.0" alignment="CENTER_LEFT" minWidth="150">
                                 <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#0052cc"/><Label text="Food" styleClass="legend-text"/></HBox>
                                 <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#ff9900"/><Label text="Transport" styleClass="legend-text"/></HBox>
                                 <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#2ecc71"/><Label text="Shopping" styleClass="legend-text"/></HBox>

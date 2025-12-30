@@ -2,11 +2,40 @@
 ======
 Login
 ======
+*/
 /* General Background */
 #rootPane {
     -fx-background-color: #F0F2F5; /* Light gray-blue background */
 }
 
+/* The main button container */
+.back-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-text-fill: #030e2e;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+/* Hover effect for the button */
+.back-button:hover {
+    -fx-opacity: 0.7;
+}
+
+/* The circular border around the arrow */
+.icon-circle {
+    -fx-border-color: #030e2e;
+    -fx-border-radius: 50;
+    -fx-border-width: 2;
+    -fx-alignment: center;
+    -fx-pref-height: 32px;
+    -fx-pref-width: 32px;
+    -fx-text-fill: #030e2e;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 2 0; /* Centers the arrow vertically */
+}
 /* Input Fields (TextField and PasswordField) */
 .input-field {
     -fx-background-color: white;
@@ -179,7 +208,7 @@ Dashboard
 
 /* Sidebar */
 .sidebar {
-    -fx-background-color: var(-fx-sidebar-blue);
+    -fx-background-color: -fx-sidebar-blue;
     -fx-padding: 40 20;
 }
 
@@ -203,7 +232,7 @@ Dashboard
 
 .nav-button-active {
     -fx-background-color: #C0D1F9;
-    -fx-text-fill: var(-fx-primary-blue);
+    -fx-text-fill: -fx-primary-blue;
     -fx-font-weight: bold;
 }
 
@@ -539,137 +568,99 @@ Edit Expense
 Transaction History
 ===============
 */
-/* Note: This CSS assumes the use of styles from dashboard-styles.css
-   (e.g., .sidebar, .nav-button, .logo-text, .profile-circle, .dashboard-header)
-   and only defines new or overriding styles. */
-
-/* --- Layout Overrides --- */
-.history-content-container {
-    -fx-padding: 30px 50px;
-    -fx-background-color: #f5f7fa; /* Light Gray Background */
-}
-
-.nav-button-active {
-    /* Override for History button active state */
-    -fx-background-color: white;
-    -fx-text-fill: #3267E5;
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
-}
-
-/* --- Page Title --- */
-.page-title {
-    -fx-font-size: 36px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #2c3e50;
-    -fx-padding-bottom: 10px;
-}
-
 /* --- TableView Styling --- */
 .history-table {
-    -fx-background-color: transparent;
+    -fx-background-color: white;
     -fx-background-insets: 0;
+    /* Fix: Remove internal padding that causes the 'space on the left' */
     -fx-padding: 0;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+/* Remove the empty extra column header space */
+.history-table .filler {
+    -fx-background-color: transparent;
 }
 
 .history-table .column-header-background {
-    -fx-background-color: transparent;
-    -fx-border-color: #ecf0f1;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #eceff1;
     -fx-border-width: 0 0 1 0;
 }
 
 .history-table .column-header {
     -fx-background-color: transparent;
-    -fx-padding: 15 10;
+    -fx-size: 40px;
 }
 
 .history-table .column-header .label {
-    -fx-text-fill: #90A4AE;
+    -fx-text-fill: #7f8c8d;
     -fx-font-weight: bold;
-    -fx-alignment: CENTER_LEFT;
+    -fx-alignment: CENTER;
 }
+
 .history-table .table-cell {
-    -fx-padding: 15 10;
+    -fx-padding: 12 15;
     -fx-border-color: transparent;
     -fx-text-fill: #2c3e50;
     -fx-font-size: 14px;
+    -fx-alignment: CENTER;
 }
-/* Row Styling */
+
 .history-table .table-row-cell {
     -fx-background-color: white;
     -fx-border-color: #f1f3f5;
     -fx-border-width: 0 0 1 0;
 }
-.history-table .table-row-cell:odd {
-    -fx-background-color: #fafbfc;
-}
 
-.history-table .table-row-cell:empty {
-    -fx-background-color: transparent;
-    -fx-border-width: 0;
-}
 .history-table .table-row-cell:filled:hover {
     -fx-background-color: #f0f4ff;
 }
 
-/* Custom amount styling for the table */
+/* --- Amount Colors --- */
 .amount-cell-negative {
-    -fx-text-fill: #e74c3c !important;
+    -fx-text-fill: #e74c3c !important; /* Red */
     -fx-font-weight: bold;
 }
 
-
-/* Custom Category Column Cell Styling (to handle multi-line text) */
-.history-table .table-cell:nth-child(2) { /* Category column */
-    -fx-wrap-text: true;
-    -fx-text-alignment: left;
-}
-
-/* Custom styling for the Amount column based on value */
-.history-table .amount-column .label {
+.amount-cell-positive {
+    -fx-text-fill: #2ecc71 !important; /* Green */
     -fx-font-weight: bold;
 }
 
-/* Use Cell Value Factory in Java to apply specific color based on sign,
-   but for general styling: */
-.history-table .table-row-cell .amount-column {
-    -fx-alignment: TOP_RIGHT;
+/* --- Action Buttons --- */
+.action-box {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 10;
 }
 
-/* To style income (+value) and expense (-value) specifically in a TableView
-   cell using CSS, you need a custom CellFactory in the Java controller
-   to apply specific CSS classes to the cell/label itself. */
-
-/* Example: If you apply a class "expense-amount" to the cell content: */
-.history-table .table-cell.expense-amount .label {
-    -fx-text-fill: #e74c3c; /* Red */
-}
-
-/* Example: If you apply a class "income-amount" to the cell content: */
-.history-table .table-cell.income-amount .label {
-    -fx-text-fill: #2ecc71; /* Green */
-}
-/* Add to your styles.css */
-.table-cell.expense-amount {
-    -fx-text-fill: #e74c3c;
+.edit-btn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-padding: 5 15;
+    -fx-background-radius: 4;
     -fx-font-weight: bold;
 }
 
-.table-cell.income-amount {
-    -fx-text-fill: #2ecc71;
+.edit-btn:hover {
+    -fx-background-color: #2980b9;
+}
+
+.delete-btn {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-padding: 5 15;
+    -fx-background-radius: 4;
     -fx-font-weight: bold;
 }
 
-/* Buttons */
-.action-edit-button {
-    -fx-background-color: #f0f4ff;
-    -fx-padding: 6 10;
-    -fx-background-radius: 6;
-}
-.action-delete-button {
-    -fx-background-color: #fff0f0;
-    -fx-padding: 6 10;
-    -fx-background-radius: 6;
+.delete-btn:hover {
+    -fx-background-color: #c0392b;
 }
 /*
 ============
@@ -782,7 +773,7 @@ Registration
 /*
 ===========
 Analytics
-===========
+==========
 */
 /* General Root Styling */
 .root {
@@ -857,7 +848,15 @@ Analytics
 .default-color1.chart-bar { -fx-bar-fill: #e74a3b; } /* Expense */
 
 /* Metric Cards */
-.info-card-title { -fx-font-size: 14px; -fx-text-fill: #718096; }
+.info-card-title {
+        -fx-font-size: 20px;
+        -fx-font-weight: bold;
+        -fx-text-fill: #1A237E;
+        -fx-padding: 0 0 20 0;
+        -fx-alignment: CENTER;
+        -fx-max-width: Infinity;
+
+ }
 .info-card-value-expense, .info-card-value-average {
     -fx-font-size: 24px;
     -fx-font-weight: bold;

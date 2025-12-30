@@ -59,18 +59,18 @@
                     </VBox>
                 </VBox>
 
-                <VBox styleClass="card" GridPane.columnIndex="1">
-                    <Label styleClass="panel-title" text="Top Categories" alignment="CENTER" maxWidth="Infinity"/>
+                <VBox styleClass="content-panel" GridPane.columnIndex="1" minWidth="450">
+                    <Label styleClass="panel-title-center" text="Top Categories" alignment="CENTER" maxWidth="Infinity"/>
                     <HBox alignment="CENTER" spacing="20.0">
-                        <PieChart fx:id="categoryPieChart" labelsVisible="false" legendVisible="false" prefHeight="200" prefWidth="200" />
-                        <VBox spacing="12.0" alignment="CENTER_LEFT">
-                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#0052cc"/><Label text="Food" styleClass="legend-text"/></HBox>
-                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#ff9900"/><Label text="Transport" styleClass="legend-text"/></HBox>
-                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#2ecc71"/><Label text="Shopping" styleClass="legend-text"/></HBox>
-                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#9b59b6"/><Label text="Entertainment" styleClass="legend-text"/></HBox>
-                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#e74c3c"/><Label text="Bills" styleClass="legend-text"/></HBox>
-                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#1abc9c"/><Label text="Health" styleClass="legend-text"/></HBox>
-                            <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="6" fill="#95a5a6"/><Label text="Others" styleClass="legend-text"/></HBox>
+                        <PieChart fx:id="categoryPieChart"  labelsVisible="true" prefHeight="200" prefWidth="200" />
+                        <VBox spacing="12.0" alignment="CENTER_LEFT" minWidth="150">
+                            <HBox spacing="10" alignment="CENTER_LEFT" ><Circle radius="6" fill="#0052cc"/><Label text="Food" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT" ><Circle radius="6" fill="#ff9900"/><Label text="Transport" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT" ><Circle radius="6" fill="#2ecc71"/><Label text="Shopping" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT" ><Circle radius="6" fill="#9b59b6"/><Label text="Entertainment" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT" ><Circle radius="6" fill="#e74c3c"/><Label text="Bills" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT" ><Circle radius="6" fill="#1abc9c"/><Label text="Health" styleClass="legend-text"/></HBox>
+                            <HBox spacing="10" alignment="CENTER_LEFT" ><Circle radius="6" fill="#95a5a6"/><Label text="Others" styleClass="legend-text"/></HBox>
                         </VBox>
                     </HBox>
                 </VBox>

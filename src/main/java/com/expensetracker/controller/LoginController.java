@@ -53,7 +53,7 @@ public class LoginController {
             SessionManager.setUser(user);
 
             // 3. Navigate to Dashboard
-            SceneManager.loadScene(MainApp.dashboardPage, "Dashboard", 1200, 700);
+            SceneManager.loadScene(MainApp.dashboardPage, "Dashboard");
         } else {
             System.out.println("Login Failed: Invalid credentials.");
             showAlert("Login Failed", "Invalid username or password. Please try again.");
@@ -61,10 +61,14 @@ public class LoginController {
     }
 
     @FXML
-    private void handleRegisterAction(ActionEvent event) {
-        SceneManager.loadScene(MainApp.registrationPage, "Register", 1200, 700);
+    private void handleSignUpAction(ActionEvent event) {
+        SceneManager.loadScene(MainApp.signupPage, "SignUp");
     }
-
+    @FXML
+    private void handleBackToLanding(ActionEvent event) {
+        System.out.println("Back button clicked - navigating to landing");
+        SceneManager.loadScene(MainApp.landingPage, "Landing");
+    }
     private void showAlert(String title, String message) {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle(title);

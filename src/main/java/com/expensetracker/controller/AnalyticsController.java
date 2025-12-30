@@ -138,7 +138,6 @@ public class AnalyticsController implements Initializable {
             // Apply color immediately after adding to ensure consistency
             applySliceColor(data, category);
         });
-
         categoryPieChart.setData(pieData);
     }
 
@@ -164,23 +163,24 @@ public class AnalyticsController implements Initializable {
         });
     }
 
+
     /* ============================
        NAVIGATION
        ============================ */
 
     @FXML
     private void handleDashboard(ActionEvent event) {
-        SceneManager.loadScene(MainApp.dashboardPage, "Dashboard", 1200, 700);
+        SceneManager.loadScene(MainApp.dashboardPage, "Dashboard");
     }
 
     @FXML
     private void handleHistory(ActionEvent event) {
-        SceneManager.loadScene(MainApp.expenseHistoryPage, "Expense History", 1200, 700);
+        SceneManager.loadScene(MainApp.expenseHistoryPage, "Expense History");
     }
 
     @FXML
     private void handleLogout(ActionEvent event) {
         SessionManager.logout();
-        SceneManager.loadScene(MainApp.loginPage, "Login", 1200, 700);
+        SceneManager.loadScene(MainApp.loginPage, "Login");
     }
 }
